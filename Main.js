@@ -10,10 +10,32 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+// Model loader
+const loader = new GLTFLoader();
+let modelMesh;
+
+loader.load(
+    'Models/boombox.gltf', // Path to your 3D model
+    function (gltf) {
+        modelMesh = gltf.scene;
+        scene.add(modelMesh);
+        camera.position.z = 5;
+
+        // Apply the default texture
+        const defaultTexture = new THREE.TextureLoader().load('Textures/UV_TILES.png', function (texture) {
+            modelMesh.traverse((child) => {
+                if (child.isMesh) {
+                    child.material.map = texture;
+                    child.material.needsUpdate = true;
+                }
+            });
+        });
+    },
+    undefined,
+    function (error) {
+        console.error('An error happened', error);
+    }
+);
 
 camera.position.z = 5;
 
