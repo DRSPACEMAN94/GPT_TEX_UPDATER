@@ -1,2 +1,2 @@
-import { test } from './test.js';
-console.log(test); // Should log "Hello, World!"
+import * as THREE from './libs/three.module.js';
+import { GLTFLoader } from './libs/GLTFLoader.js';
