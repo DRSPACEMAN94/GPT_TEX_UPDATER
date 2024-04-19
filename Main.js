@@ -19,7 +19,7 @@ const loader = new GLTFLoader();
 let modelMesh;
 
 loader.load(
-    'Models/shirt.gltf', // Path to your 3D model
+    'Models/boombox.gltf', // Path to your 3D model
     function (gltf) {
         modelMesh = gltf.scene;
         scene.add(modelMesh);
