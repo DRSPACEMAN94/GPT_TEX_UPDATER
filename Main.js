@@ -1,5 +1,4 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.137.0/build/three.module.js';
-import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@0.137.0/examples/jsm/loaders/FBXLoader.js';
 
 // Scene setup
 const scene = new THREE.Scene();
