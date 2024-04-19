@@ -65,7 +65,7 @@ function updateTexture(url) {
 function animate() {
     requestAnimationFrame(animate);
     if (modelMesh) {
-        modelMesh.rotation.y += 0.01;
+        modelMesh.rotation.y += 0.05;
     }
     renderer.render(scene, camera);
 }
