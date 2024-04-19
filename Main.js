@@ -13,6 +13,10 @@ scene.add(cube);
 
 camera.position.z = 5;
 
+// Adding lighting
+const light = new THREE.AmbientLight(0xffffff); // Soft white light
+scene.add(light);
+
 function animate() {
     requestAnimationFrame(animate);
     cube.rotation.x += 0.01;
